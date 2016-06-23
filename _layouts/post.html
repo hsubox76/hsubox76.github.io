@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="row">
+	<div class="small-2 columns left-menu">menu</div>
+	<div class="small-10 columns">
+		<div class="row">
+			<div class="post-nav-prev small-6 columns">
+				{% if page.previous.url %}
+					<a class="prev" href="{{page.previous.url}}">
+						&laquo; {{page.previous.title}}</a>
+				{% endif %}
+			</div>
+			<div class="post-nav-next small-6 columns">
+				{% if page.next.url %}
+					<a class="prev" href="{{page.next.url}}">
+						{{page.next.title}} &raquo;</a>
+				{% endif %}
+			</div>
+		</div>
+		{{ content }}
+	</div>
+</div>

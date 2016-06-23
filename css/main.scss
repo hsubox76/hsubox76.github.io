@@ -1,0 +1,21 @@
+---
+---
+@import 'foundation';
+
+@include foundation-everything;
+
+.nav {
+	margin-bottom: 10px;
+}
+
+.post-date {
+	color: $dark-gray;
+}
+
+.post-nav-next {
+	text-align: right;
+}
+
+.left-menu {
+	background-color: $light-gray;
+}
