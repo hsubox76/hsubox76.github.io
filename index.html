@@ -6,33 +6,81 @@ layout: default
 <div class="row">
   <div class="large-12 columns">
 	  <div class="callout">
-	    <h1>Hello, world!</h1>
-	    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-	    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+      <div class="row">
+        <div class="medium-8 columns">
+          <div class="current-project-box">
+            <h3>Current Project</h3>
+            <p><span class="project-name">Gunshooter</span> <span class="project-description">A text-based first person shooter adventure game for the browser and also
+            the phone I guess. Just got started, there's not much to see.</span></p>
+            <p><a href="https://github.com/hsubox76/gunshooter">github</a> | <a href="http://gunshooter.meanestbear.com/">deployed</a></p>
+          </div>
+        </div>
+        <div class="medium-4 columns">
+          <div class="callout contact-icons">
+            <a class="contact-icon icon-github fa fa-github" href="https://github.com/hsubox76/"></a>
+            <a class="contact-icon icon-linkedin fa fa-linkedin" href="https://www.linkedin.com/in/christinahsuholland"></a>
+          </div>
+        </div>
+      </div>
 	  </div>
   </div>
 </div>
 
   <!-- Example row of columns -->
   <div class="row">
-    <div class="medium-6 columns">
-      <h2>"Recent" Posts</h2>
+    <div class="medium-4 columns">
+      <h2>Recent Projects</h2>
+      {% assign projectCount = 0 %}
       {% for post in site.posts %}
-      <div>
-      	<a href="{{ post.url }}">{{ post.title }}</a>
-      	<span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
-        <img src="/images/{{ post.images[0].url }}" />
-      </div>
+          {% if post.categories contains "Project" and projectCount < 5 %}
+          <div class="post-excerpt-box">
+            <p>
+              <a class="project-post-title" href="{{ post.url }}">{{ post.title }}</a>
+              <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+            </p>
+            <div class="post-excerpt">
+              {{ post.excerpt }}
+            </div>
+          </div>
+          {% assign projectCount=projectCount | plus:1 %}
+        {% endif %}
       {% endfor %}
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
     </div>
-    <div class="medium-3 columns">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    <div class="medium-4 columns">
+      <h2>Other Posts</h2>
+      {% assign otherPostCount = 0 %}
+      {% for post in site.posts %}
+          {% if post.categories contains "Project" %}{% else %}
+            {% if otherPostCount < 5 %}
+            <div class="post-excerpt-box">
+              <p>
+                <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+                <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+              </p>
+              <div class="post-excerpt">
+                  PROJECT!
+                {{ post.excerpt }}
+              </div>
+            </div>
+            {% assign otherPostCount=otherPostCount | plus:1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="medium-4 columns">
+      <h2>Repos</h2>
+      {% assign repos = site.github.public_repositories | sort: 'updated_at' | reverse %}
+      {% for repository in repos %}
+        {% if repository.description != '' %}
+        {% if repository.fork == false %}
+          <div class="repo-box">
+            <p>
+              <a class="repo-title" href="{{repository.html_url}}">{{ repository.name }}</a>
+              <span class="repo-date">{{ repository.updated_at | date: '%d %b %Y'}}
+            </p>
+            <p>{{ repository.description }}</p>
+          </div>
+        {% endif %}
+        {% endif %}
+      {% endfor %}
    </div>
-    <div class="medium-3 columns">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>

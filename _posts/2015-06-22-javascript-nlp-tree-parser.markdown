@@ -6,18 +6,16 @@ layout: post
 link: http://www.christinahsuholland.com/javascript-nlp-tree-parser/
 slug: javascript-nlp-tree-parser
 title: JavaScript NLP Tree Parser
+excerpt: As part of the Crowd Parser project, I was working on a more sophisticated dependency tree parser to make an improved negation layer and make sure the positive/negative words used to score the tweet were actually referring to the keyword we were looking at.
 wordpress_id: 251
-images:
-
-- url: 2015/06/Screenshot-2015-06-21-21.26.13.png
-alt: Crowd Parser screenshot
-title: Crowd Parser
 
 categories:
 - Code
+- Project
 ---
 
 [![Crowd Parser screenshot](/images/2015/06/Screenshot-2015-06-21-21.26.13.png)](/images/2015/06/Screenshot-2015-06-21-21.26.13.png)
+
 
 As part of the [Crowd Parser project](http://www.christinahsuholland.com/crowd-parser-thesis-project/), I was working on a more sophisticated dependency tree parser to make an improved negation layer and make sure the positive/negative words used to score the tweet were actually referring to the keyword we were looking at.
 

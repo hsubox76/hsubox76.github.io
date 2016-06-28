@@ -14,6 +14,7 @@ wordpress_id: 176
 categories:
 - Code
 - Experience
+- Project
 ---
 
 [![ic_homepage](/images/2015/05/ic_homepage.png)](/images/2015/05/ic_homepage.png)

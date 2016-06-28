@@ -9,6 +9,7 @@ title: Parallel Processing Test With n-Queens
 wordpress_id: 51
 categories:
 - Code
+- Project
 ---
 
 [![undefined.jpg](/images/2015/04/undefined-e1428212923980.jpg)](http://christinahsuholland.com/nqueens/webworker/webworker.html)
