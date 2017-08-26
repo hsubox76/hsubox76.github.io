@@ -5,7 +5,7 @@ layout: default
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="row">
   <div class="large-12 columns">
-	  <div class="callout">
+	  <div>
       <div class="row">
         <div class="medium-8 columns">
           <div class="current-project-box">
@@ -15,12 +15,6 @@ layout: default
             <p><a href="https://github.com/hsubox76/gunshooter">github</a></p>
           </div>
         </div>
-        <div class="medium-4 columns">
-          <div class="callout contact-icons">
-            <a class="contact-icon icon-github fa fa-github" href="https://github.com/hsubox76/"></a>
-            <a class="contact-icon icon-linkedin fa fa-linkedin" href="https://www.linkedin.com/in/christinahsuholland"></a>
-          </div>
-        </div>
       </div>
 	  </div>
   </div>
@@ -28,7 +22,7 @@ layout: default
 
   <!-- Example row of columns -->
   <div class="row">
-    <div class="medium-4 columns">
+    <div class="medium-4 columns content-column content-column-1">
       <h2>Recent Projects</h2>
       {% assign projectCount = 0 %}
       {% for post in site.posts %}
@@ -46,7 +40,7 @@ layout: default
         {% endif %}
       {% endfor %}
     </div>
-    <div class="medium-4 columns">
+    <div class="medium-4 columns content-column content-column-2">
       <h2>Other Posts</h2>
       {% assign otherPostCount = 0 %}
       {% for post in site.posts %}
@@ -66,7 +60,7 @@ layout: default
         {% endif %}
       {% endfor %}
     </div>
-    <div class="medium-4 columns">
+    <div class="medium-4 columns content-column content-column-3">
       <h2>Repos</h2>
       {% assign repos = site.github.public_repositories | sort: 'updated_at' | reverse %}
       {% for repository in repos %}

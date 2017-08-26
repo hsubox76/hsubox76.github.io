@@ -3,9 +3,22 @@ layout: default
 ---
 
 <div class="row">
-	<div class="small-2 columns left-menu">menu</div>
+	<div class="small-2 columns left-menu">
+    {% assign otherPostCount = 0 %}
+    {% for post in site.posts %}
+      {% if otherPostCount < 40 %}
+        <div class="side-menu-item">
+          <p>
+            <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+          </p>
+        </div>
+        {% assign otherPostCount=otherPostCount | plus:1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
 	<div class="small-10 columns">
-		<div class="row">
+		<div class="row post-nav">
 			<div class="post-nav-prev small-6 columns">
 				{% if page.previous.url %}
 					<a class="prev" href="{{page.previous.url}}">
@@ -18,7 +31,8 @@ layout: default
 						{{page.next.title}} &raquo;</a>
 				{% endif %}
 			</div>
-		</div>
+    </div>
+    <h2 class="post-header">{{page.title}}</h2>
 		{{ content }}
 	</div>
 </div>
