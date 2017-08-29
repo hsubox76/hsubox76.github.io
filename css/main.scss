@@ -11,6 +11,13 @@ $biscay: #2D3E4F;
 $rajah: #F8B265;
 $don-juan: #5C4B51;
 
+$sky: #CAEBF2;
+$sky-dark: #92cdda;
+$carbon: #A9A9A9;
+$watermelon: #FF3B3F;
+$neutral: #EFEFEF;
+$default-font-color: #444;
+
 // a, a:link, a:hover, a:active, a:visited {
 // 	color: #de7400;
 // }
@@ -19,66 +26,32 @@ $don-juan: #5C4B51;
 // 	color: #f78100;
 // }
 
+body {
+  background-color: #d6d6d6;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  color: $default-font-color;
+}
+
 .top-bar {
   padding: 0;
 
   li {
     padding: 0.5rem;
 
-    &.contact-item {
-      font-size: 2rem;
-      margin-left: 10px;
-      padding: 0;
-      
-      a.icon-linkedin {
-        color: #1884BB;
-      }
-      
-      a.icon-github {
-        color: #333;
-      }
-    }
-
     &.menu-item-main {
-      font-weight: bold;
-    }
-    
-    &.menu-item-0 {
-      background-color: $biscay;
-      a {
-        color: white;
-      }
-    }
-    
-    &.menu-item-0:hover {
-      background-color: #4A5E71;
-    }
+      font-size: 2rem;
+      padding: 0;
 
-    &.menu-item-1 {
-      background-color: #8CBCB4;
       a {
         color: white;
-      }
-    }
-    
-    &.menu-item-1:hover {
-      background-color: #ACD5CE;
-      a {
-        color: $biscay;
-      }
-    }
+        padding: 0.1rem 0.5rem;
 
-    &.menu-item-2 {
-      background-color: $carnation;
-      a {
-        color: white;
-      }
-    }
-    
-    &.menu-item-2:hover {
-      background-color: #EC8283;
-      a {
-        color: $biscay;
+        span {
+          padding: 0.2rem;
+          background-color: $watermelon;
+          border: 0.3rem solid $sky;
+          border-radius: 1.5rem;
+        }
       }
     }
   }
@@ -92,35 +65,56 @@ $don-juan: #5C4B51;
   }
 }
 
+.main-area {
+  background-image: url('/images/abstract.jpg');
+}
+
+.content-container {
+  background-color: $neutral;
+}
+
+.contact-item-container {
+  display: flex;
+  
+  .contact-item {
+    font-size: 2rem;
+    margin-left: 10px;
+    padding: 0;
+    
+    a.icon-linkedin {
+      color: #1884BB;
+    }
+    
+    a.icon-github {
+      color: #333;
+    }
+  }
+}
+
 .current-project-box {
-	padding: 1rem;
-}
-
-.project-name {
-  font-weight: bold;
-}
-
-.project-description {
-	color: #666;
+  margin: 1rem 0;
+  padding: 1rem;
+  // border: .3rem solid $sky;
+  background-color: rgba(97, 175, 185, 0.7);
+  color: white;
 }
 
 .post-excerpt-box,
+.project-post-excerpt-box,
 .repo-box {
   margin-bottom: 1.5rem;
-  padding: 1rem;
-}
+  padding: 0;
 
-.content-column {
-  color: white;
-  padding: 1rem 1.5rem;
+  .project-post-excerpt-header {
+    padding: 0.5rem;
+    background-color: $watermelon;
+    color: white;
+  }
   
-  .post-excerpt-box,
-  .repo-box {
-    background-color: $white;
-
-    p {
-      color: $biscay;
-    }
+  .post-excerpt-header {
+    padding: 0.5rem;
+    background-color: $sky-dark;
+    color: white;
   }
   
   .post-title,
@@ -131,11 +125,11 @@ $don-juan: #5C4B51;
   }
 
   a.project-post-title {
-    color: $carnation;
+    color: white;
   }
 
   a.post-title {
-    color: $summer-green;
+    color: white;
   }
 
   a.repo-title {
@@ -143,29 +137,31 @@ $don-juan: #5C4B51;
   }
 }
 
-.content-column-1 {
-  background-color: $summer-green;
+.project-post-excerpt-box {
+  border: 1px solid $watermelon;
 }
 
-.content-column-2 {
-  background-color: $carnation;
+.post-excerpt-box {
+  border: 1px solid $sky-dark;
 }
 
-.content-column-3 {
-  background-color: $biscay;
+.content-column {
+  color: $carbon;
 }
 
 .post-date,
 .repo-date {
-	color: $dark-gray;
-	font-size: 0.8rem;
-	white-space: nowrap;
+	color: white;
+	font-size: 0.9rem;
+  white-space: nowrap;
+  font-style: italic;
 }
 
 .post-excerpt {
   font-size: 1rem;
-  color: $biscay;
+  color: #444;
   background-color: white;
+  padding: 0.8rem;
 }
 
 .contact-icons {
