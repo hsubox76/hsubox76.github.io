@@ -3,77 +3,97 @@ layout: default
 ---
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="row">
+<div class="row main-area">
   <div class="large-12 columns">
 	  <div>
       <div class="row">
-        <div class="medium-8 columns">
+        <div class="medium-6 columns">
           <div class="current-project-box">
-            <h3>Current Project</h3>
-            <p><span class="project-name">Gunshooter</span> <span class="project-description">A text-based first person shooter adventure game for the browser and also
-            the phone I guess. Just got started, there's not much to see.</span></p>
-            <p><a href="https://github.com/hsubox76/gunshooter">github</a></p>
+            <h3>Christina Holland</h3>
+            <p>Professional software person specializing in buzzwords
+              such as <strong>front-end</strong>,
+              <strong>React</strong>, <strong>data visualization</strong>, and
+              <strong>10x scrum wearable microservices</strong>
+            </p>
+            <div class="contact-item-container">
+                <div class="contact-item">
+                  <a class="contact-icon icon-github fa fa-github" href="https://github.com/hsubox76/"></a>
+                </div>
+                <div class="contact-item">
+                  <a class="contact-icon icon-linkedin fa fa-linkedin" href="https://www.linkedin.com/in/christinahsuholland"></a>
+                </div>
+                <div class="contact-item">
+                  <a class="contact-icon icon-twitter fa fa-twitter" href="https://twitter.com/americanwombat"></a>
+                </div>
+              </div>
           </div>
+        </div>
+        <div class="medium-6 columns">
+            <div class="current-project-box">
+              <h4>Upcoming Stuff</h4>
+              <div class="upcoming-event">
+                <a href="https://www.meetup.com/ReactJS-San-Francisco/events/237414998/">
+                  Talk @ ReactJS SF Bay Area Meetup (9/14/2017)
+                </a>
+                <div>"Coding React Like A Loose Cannon"</div>
+              </div>
+              <div class="upcoming-event">
+                <a href="https://www.meetup.com/Real-World-React/events/242202176/">
+                  Talk @ Real World React Meetup (9/19/2017)
+                </a>
+                <div>"React + Charts, With And Without Libraries"</div>
+              </div>
+              <div class="upcoming-event">
+                <a href="http://www.reactboston.com/">
+                  Talk @ React Boston Conf (9/23/2017)
+                </a>
+                <div>"React + Charts, With And Without Libraries"</div>
+              </div>
+            </div>
         </div>
       </div>
 	  </div>
   </div>
 </div>
 
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="medium-4 columns content-column content-column-1">
-      <h2>Recent Projects</h2>
-      {% assign projectCount = 0 %}
-      {% for post in site.posts %}
-          {% if post.categories contains "Project" and projectCount < 5 %}
+<!-- Example row of columns -->
+<div class="row content-columns-container">
+  <div class="medium-6 columns content-column content-column-1">
+    <h2>Project Posts</h2>
+    {% assign projectCount = 0 %}
+    {% for post in site.posts %}
+        {% if post.categories contains "Project" and projectCount < 5 %}
+        <div class="project-post-excerpt-box">
+          <div class="project-post-excerpt-header">
+            <a class="project-post-title" href="{{ post.url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+          </div>
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+          </div>
+        </div>
+        {% assign projectCount=projectCount | plus:1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="medium-6 columns content-column content-column-2">
+    <h2>Blog Posts</h2>
+    {% assign otherPostCount = 0 %}
+    {% for post in site.posts %}
+        {% if post.categories contains "Project" %}{% else %}
+          {% if otherPostCount < 5 %}
           <div class="post-excerpt-box">
-            <p>
-              <a class="project-post-title" href="{{ post.url }}">{{ post.title }}</a>
+            <div class="post-excerpt-header">
+              <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
               <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
-            </p>
+            </div>
             <div class="post-excerpt">
               {{ post.excerpt }}
             </div>
           </div>
-          {% assign projectCount=projectCount | plus:1 %}
+          {% assign otherPostCount=otherPostCount | plus:1 %}
         {% endif %}
-      {% endfor %}
-    </div>
-    <div class="medium-4 columns content-column content-column-2">
-      <h2>Other Posts</h2>
-      {% assign otherPostCount = 0 %}
-      {% for post in site.posts %}
-          {% if post.categories contains "Project" %}{% else %}
-            {% if otherPostCount < 5 %}
-            <div class="post-excerpt-box">
-              <p>
-                <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-                <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
-              </p>
-              <div class="post-excerpt">
-                {{ post.excerpt }}
-              </div>
-            </div>
-            {% assign otherPostCount=otherPostCount | plus:1 %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </div>
-    <div class="medium-4 columns content-column content-column-3">
-      <h2>Repos</h2>
-      {% assign repos = site.github.public_repositories | sort: 'updated_at' | reverse %}
-      {% for repository in repos %}
-        {% if repository.description != '' %}
-        {% if repository.fork == false %}
-          <div class="repo-box">
-            <p>
-              <a class="repo-title" href="{{repository.html_url}}">{{ repository.name }}</a>
-              <span class="repo-date">{{ repository.updated_at | date: '%d %b %Y'}}
-            </p>
-            <p>{{ repository.description }}</p>
-          </div>
-        {% endif %}
-        {% endif %}
-      {% endfor %}
-   </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

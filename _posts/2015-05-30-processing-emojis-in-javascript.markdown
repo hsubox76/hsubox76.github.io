@@ -1,11 +1,12 @@
 ---
-author: hsubox@gmail.com
+author: Christina Holland
 comments: true
 date: 2015-05-30 21:04:38+00:00
 layout: post
 link: http://www.christinahsuholland.com/processing-emojis-in-javascript/
 slug: processing-emojis-in-javascript
 title: Processing Emojis In JavaScript
+excerpt: If you've ever tried to process emojis in JavaScript, you will understand that they are the devil. Most people dealing with emojis in text data just either pass them through untouched, or remove them as garbage that doesn't need to be evaluated. The second approach...
 wordpress_id: 141
 categories:
 - Code

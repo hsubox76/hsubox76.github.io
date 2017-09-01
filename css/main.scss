@@ -5,11 +5,14 @@
 
 @include foundation-everything;
 
-$carnation: #EF6263;
-$summer-green: #8CBCB4;
-$biscay: #2D3E4F;
-$rajah: #F8B265;
-$don-juan: #5C4B51;
+$sky: #CAEBF2;
+$sky-dark: #78b7bf;
+$sky-darker: #518086;
+$sky-darkest: #40696E;
+$carbon: #A9A9A9;
+$watermelon: #FF3B3F;
+$neutral: #EFEFEF;
+$default-font-color: #444;
 
 // a, a:link, a:hover, a:active, a:visited {
 // 	color: #de7400;
@@ -19,108 +22,119 @@ $don-juan: #5C4B51;
 // 	color: #f78100;
 // }
 
+body {
+  background-color: #d6d6d6;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  color: $default-font-color;
+}
+
 .top-bar {
   padding: 0;
 
   li {
     padding: 0.5rem;
 
-    &.contact-item {
-      font-size: 2rem;
-      margin-left: 10px;
-      padding: 0;
-      
-      a.icon-linkedin {
-        color: #1884BB;
-      }
-      
-      a.icon-github {
-        color: #333;
-      }
-    }
-
     &.menu-item-main {
-      font-weight: bold;
-    }
-    
-    &.menu-item-0 {
-      background-color: $biscay;
-      a {
-        color: white;
-      }
-    }
-    
-    &.menu-item-0:hover {
-      background-color: #4A5E71;
-    }
+      font-size: 2rem;
+      padding: 0;
 
-    &.menu-item-1 {
-      background-color: #8CBCB4;
       a {
         color: white;
-      }
-    }
-    
-    &.menu-item-1:hover {
-      background-color: #ACD5CE;
-      a {
-        color: $biscay;
-      }
-    }
+        padding: 0.1rem 0.5rem;
 
-    &.menu-item-2 {
-      background-color: $carnation;
-      a {
-        color: white;
-      }
-    }
-    
-    &.menu-item-2:hover {
-      background-color: #EC8283;
-      a {
-        color: $biscay;
+        span {
+          padding: 0.2rem;
+          background-color: $watermelon;
+          border: 0.3rem solid $sky;
+          border-radius: 1.5rem;
+        }
       }
     }
   }
 
   a, a:link, a:visited {
-  	color: $biscay;
+  	color: $watermelon;
   }
   
   a:hover, a:active {
-  	color: $biscay;
+  	color: $watermelon;
+  }
+}
+
+.main-area {
+  background-image: url('/images/abstract.jpg');
+  border-top: 2px solid #FF3B3F;
+  border-bottom: 4px solid #FF3B3F;
+}
+
+.content-container {
+  background-color: $neutral;
+}
+
+.contact-item-container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  
+  .contact-item {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    a.icon-linkedin {
+      color: #1884BB;
+    }
+    
+    a.icon-github {
+      color: #333;
+    }
+
+    a.icon-twitter {
+      color: #1DA1F2;
+    }
   }
 }
 
 .current-project-box {
-	padding: 1rem;
-}
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(97, 175, 185, 0.7);
+  color: white;
+  
+  .upcoming-event {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
 
-.project-name {
-  font-weight: bold;
-}
+  a {
+    font-weight: bold;
+    color: white;
 
-.project-description {
-	color: #666;
+    &:hover {
+      color: $sky;
+    }
+  }
 }
 
 .post-excerpt-box,
+.project-post-excerpt-box,
 .repo-box {
   margin-bottom: 1.5rem;
-  padding: 1rem;
-}
+  padding: 0;
 
-.content-column {
-  color: white;
-  padding: 1rem 1.5rem;
+  .project-post-excerpt-header {
+    padding: 0.5rem;
+    background-color: $watermelon;
+    color: white;
+  }
   
-  .post-excerpt-box,
-  .repo-box {
-    background-color: $white;
-
-    p {
-      color: $biscay;
-    }
+  .post-excerpt-header {
+    padding: 0.5rem;
+    background-color: $sky;
   }
   
   .post-title,
@@ -131,72 +145,55 @@ $don-juan: #5C4B51;
   }
 
   a.project-post-title {
-    color: $carnation;
+    color: white;
   }
 
   a.post-title {
-    color: $summer-green;
-  }
-
-  a.repo-title {
-    color: $don-juan;
+    color: $sky-darker;
   }
 }
 
-.content-column-1 {
-  background-color: $summer-green;
+.project-post-excerpt-box {
+  border: 1px solid $watermelon;
+  
+  .post-date {
+    color: white;
+  }
 }
 
-.content-column-2 {
-  background-color: $carnation;
+.post-excerpt-box {
+  border: 1px solid $sky;
+
+  .post-date {
+    color: $sky-darker;
+  }
 }
 
-.content-column-3 {
-  background-color: $biscay;
+.content-columns-container {
+  background-color: $sky-dark;
+}
+
+.content-column {
+  color: white;
+  padding-top: 1em;
 }
 
 .post-date,
 .repo-date {
-	color: $dark-gray;
-	font-size: 0.8rem;
-	white-space: nowrap;
+	font-size: 0.9rem;
+  white-space: nowrap;
+  font-style: italic;
 }
 
 .post-excerpt {
   font-size: 1rem;
-  color: $biscay;
+  color: #444;
   background-color: white;
+  padding: 0.8rem;
 }
 
 .contact-icons {
 	font-size: 2rem;
-}
-
-.post-nav {
-  padding: 1rem;
-  background-color: $summer-green;
-  margin-bottom: 1rem;
-
-  a {
-    color: $biscay;
-    font-weight: bold;
-
-    &:hover {
-      color: #1884BB;
-    }
-  }
-}
-
-.post-nav-next {
-	text-align: right;
-}
-
-.post-header {
-  color: $biscay;
-}
-
-.left-menu {
-	background-color: $light-gray;
 }
 
 a img {
@@ -207,23 +204,74 @@ a.thumb img {
   border: 1px solid $medium-gray;
 }
 
-.left-menu {
-  background-color: $biscay;
-  padding-top: 1rem;
+.blog-post-content-container {
+  background-color: $sky;
+  
+  .left-menu {
+    padding-top: 1rem;
+  }
+
+  .post-nav {
+    padding: 1rem;
+    background-color: $watermelon;
+    margin-bottom: 1rem;
+
+    a {
+      color: white;
+      font-weight: bold;
+
+      &:hover {
+        color: #1884BB;
+      }
+    }
+  }
+
+  .post-nav-next {
+    text-align: right;
+  }
+
+  .post-header {
+    color: $sky-darker;
+  }
+
+  .post-info {
+    color: $sky-darker;
+    border-bottom: 1px solid $watermelon;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    .post-author {
+      font-size: 1.2rem;
+    }
+
+    .post-date {
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+
+    .post-category-tag {
+      margin-left: 1rem;
+      padding: 0.5rem;
+      color: $watermelon;
+      border: 1px solid $watermelon;
+    }
+  }
+
+  .blog-post-content {
+    background-color: white;
+  }
 }
 
 .side-menu-item {
-  color: white;
-
   a {
-    color: #cffff7;
+    color: $sky-darkest;
 
     &:hover {
-      color: #fff;
+      color: $sky-darker;
     }
   }
 
   .post-date {
-    color: #ddd;
+    color: $sky-darker;
   }
 }

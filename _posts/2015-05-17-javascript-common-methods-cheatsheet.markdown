@@ -1,5 +1,5 @@
 ---
-author: hsubox@gmail.com
+author: Christina Holland
 comments: true
 date: 2015-05-17 21:59:24+00:00
 excerpt: 'I was talking to some of my classmates the other day about how we always
