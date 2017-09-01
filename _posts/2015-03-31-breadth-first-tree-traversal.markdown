@@ -1,5 +1,5 @@
 ---
-author: Christina Holland
+author: hsubox@gmail.com
 comments: true
 date: 2015-03-31 00:38:29+00:00
 layout: post

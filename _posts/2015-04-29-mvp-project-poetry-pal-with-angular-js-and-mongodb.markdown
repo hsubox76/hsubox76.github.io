@@ -1,5 +1,5 @@
 ---
-author: Christina Holland
+author: hsubox@gmail.com
 comments: true
 date: 2015-04-29 06:14:59+00:00
 excerpt: Based on a suggestion from the Cracked forums, I made Poetry Pal (name courtesy

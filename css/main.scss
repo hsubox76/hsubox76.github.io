@@ -5,10 +5,14 @@
 
 @include foundation-everything;
 
+$carnation: #EF6263;
+$summer-green: #8CBCB4;
+$biscay: #2D3E4F;
+$rajah: #F8B265;
+$don-juan: #5C4B51;
+
 $sky: #CAEBF2;
-$sky-dark: #78b7bf;
-$sky-darker: #518086;
-$sky-darkest: #40696E;
+$sky-dark: #92cdda;
 $carbon: #A9A9A9;
 $watermelon: #FF3B3F;
 $neutral: #EFEFEF;
@@ -53,18 +57,16 @@ body {
   }
 
   a, a:link, a:visited {
-  	color: $watermelon;
+  	color: $biscay;
   }
   
   a:hover, a:active {
-  	color: $watermelon;
+  	color: $biscay;
   }
 }
 
 .main-area {
   background-image: url('/images/abstract.jpg');
-  border-top: 2px solid #FF3B3F;
-  border-bottom: 4px solid #FF3B3F;
 }
 
 .content-container {
@@ -73,16 +75,11 @@ body {
 
 .contact-item-container {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.4);
   
   .contact-item {
     font-size: 2rem;
+    margin-left: 10px;
     padding: 0;
-    margin: 0 10px;
-
-    &:last-child {
-      margin-right: 0;
-    }
     
     a.icon-linkedin {
       color: #1884BB;
@@ -91,33 +88,15 @@ body {
     a.icon-github {
       color: #333;
     }
-
-    a.icon-twitter {
-      color: #1DA1F2;
-    }
   }
 }
 
 .current-project-box {
   margin: 1rem 0;
   padding: 1rem;
+  // border: .3rem solid $sky;
   background-color: rgba(97, 175, 185, 0.7);
   color: white;
-  
-  .upcoming-event {
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-  }
-
-  a {
-    font-weight: bold;
-    color: white;
-
-    &:hover {
-      color: $sky;
-    }
-  }
 }
 
 .post-excerpt-box,
@@ -134,7 +113,8 @@ body {
   
   .post-excerpt-header {
     padding: 0.5rem;
-    background-color: $sky;
+    background-color: $sky-dark;
+    color: white;
   }
   
   .post-title,
@@ -149,37 +129,29 @@ body {
   }
 
   a.post-title {
-    color: $sky-darker;
+    color: white;
+  }
+
+  a.repo-title {
+    color: $don-juan;
   }
 }
 
 .project-post-excerpt-box {
   border: 1px solid $watermelon;
-  
-  .post-date {
-    color: white;
-  }
 }
 
 .post-excerpt-box {
-  border: 1px solid $sky;
-
-  .post-date {
-    color: $sky-darker;
-  }
-}
-
-.content-columns-container {
-  background-color: $sky-dark;
+  border: 1px solid $sky-dark;
 }
 
 .content-column {
-  color: white;
-  padding-top: 1em;
+  color: $carbon;
 }
 
 .post-date,
 .repo-date {
+	color: white;
 	font-size: 0.9rem;
   white-space: nowrap;
   font-style: italic;
@@ -196,6 +168,33 @@ body {
 	font-size: 2rem;
 }
 
+.post-nav {
+  padding: 1rem;
+  background-color: $summer-green;
+  margin-bottom: 1rem;
+
+  a {
+    color: $biscay;
+    font-weight: bold;
+
+    &:hover {
+      color: #1884BB;
+    }
+  }
+}
+
+.post-nav-next {
+	text-align: right;
+}
+
+.post-header {
+  color: $biscay;
+}
+
+.left-menu {
+	background-color: $light-gray;
+}
+
 a img {
   border: 1px solid $medium-gray;
 }
@@ -204,74 +203,23 @@ a.thumb img {
   border: 1px solid $medium-gray;
 }
 
-.blog-post-content-container {
-  background-color: $sky;
-  
-  .left-menu {
-    padding-top: 1rem;
-  }
-
-  .post-nav {
-    padding: 1rem;
-    background-color: $watermelon;
-    margin-bottom: 1rem;
-
-    a {
-      color: white;
-      font-weight: bold;
-
-      &:hover {
-        color: #1884BB;
-      }
-    }
-  }
-
-  .post-nav-next {
-    text-align: right;
-  }
-
-  .post-header {
-    color: $sky-darker;
-  }
-
-  .post-info {
-    color: $sky-darker;
-    border-bottom: 1px solid $watermelon;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-
-    .post-author {
-      font-size: 1.2rem;
-    }
-
-    .post-date {
-      font-size: 1rem;
-      margin-left: 1rem;
-    }
-
-    .post-category-tag {
-      margin-left: 1rem;
-      padding: 0.5rem;
-      color: $watermelon;
-      border: 1px solid $watermelon;
-    }
-  }
-
-  .blog-post-content {
-    background-color: white;
-  }
+.left-menu {
+  background-color: $biscay;
+  padding-top: 1rem;
 }
 
 .side-menu-item {
+  color: white;
+
   a {
-    color: $sky-darkest;
+    color: #cffff7;
 
     &:hover {
-      color: $sky-darker;
+      color: #fff;
     }
   }
 
   .post-date {
-    color: $sky-darker;
+    color: #ddd;
   }
 }
