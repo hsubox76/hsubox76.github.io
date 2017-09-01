@@ -1,5 +1,5 @@
 ---
-author: hsubox@gmail.com
+author: Christina Holland
 comments: true
 date: 2015-06-11 06:47:22+00:00
 excerpt: 'Crowd Parser was our final thesis project at Hack Reactor.  Our team of

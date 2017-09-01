@@ -1,5 +1,5 @@
 ---
-author: hsubox@gmail.com
+author: Christina Holland
 comments: true
 date: 2015-06-01 05:30:45+00:00
 excerpt: The "legacy project" at Hack Reactor was part of our introduction to real-world

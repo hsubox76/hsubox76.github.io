@@ -1,5 +1,5 @@
 ---
-author: hsubox@gmail.com
+author: Christina Holland
 comments: true
 date: 2015-05-31 22:39:55+00:00
 excerpt: ItemChimp was a weeklong group project - our first group project at Hack
