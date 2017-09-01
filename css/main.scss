@@ -5,12 +5,6 @@
 
 @include foundation-everything;
 
-$carnation: #EF6263;
-$summer-green: #8CBCB4;
-$biscay: #2D3E4F;
-$rajah: #F8B265;
-$don-juan: #5C4B51;
-
 $sky: #CAEBF2;
 $sky-dark: #78b7bf;
 $sky-darker: #518086;
@@ -59,11 +53,11 @@ body {
   }
 
   a, a:link, a:visited {
-  	color: $biscay;
+  	color: $watermelon;
   }
   
   a:hover, a:active {
-  	color: $biscay;
+  	color: $watermelon;
   }
 }
 
@@ -156,10 +150,6 @@ body {
 
   a.post-title {
     color: $sky-darker;
-  }
-
-  a.repo-title {
-    color: $don-juan;
   }
 }
 
