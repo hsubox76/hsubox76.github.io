@@ -62,7 +62,7 @@ body {
 }
 
 .main-area {
-  background-image: url('/images/abstract.jpg');
+  background-image: url('{{site.baseurl}}/images/abstract.jpg');
   border-top: 2px solid #FF3B3F;
   border-bottom: 4px solid #FF3B3F;
 }
