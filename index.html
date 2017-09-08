@@ -89,6 +89,11 @@ layout: default
             </div>
             <div class="post-excerpt">
               {{ post.excerpt }}
+              <div class="category-tag-container">
+                {% for category in post.categories %}
+                <span class="post-category-tag">{{ category }}</span>
+                {% endfor %}
+              </div>
             </div>
           </div>
           {% assign otherPostCount=otherPostCount | plus:1 %}
